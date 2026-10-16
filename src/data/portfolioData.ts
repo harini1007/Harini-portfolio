@@ -1,3 +1,6 @@
+import labImageUrl from '../assets/images/embedded_iot_lab_1792122590112.jpg';
+import circuitImageUrl from '../assets/images/robotics_circuit_concept_1792122590736.jpg';
+
 export interface EducationItem {
   period: string;
   degree: string;
@@ -52,9 +55,9 @@ export const PORTFOLIO_DATA = {
     email: "harinins2715@gmail.com",
     location: "Coimbatore, Tamil Nadu",
     about: "Motivated and enthusiastic Electronics and Communication Engineering student currently pursuing 2nd year, with a strong interest in electronics, embedded systems, IoT, and programming. Eager to gain practical experience, learn emerging technologies, and develop professional skills through internships and industry opportunities.",
-    avatarUrl: "/src/assets/images/harini_profile_avatar_1792122590068.jpg",
-    labImageUrl: "/src/assets/images/embedded_iot_lab_1792122590112.jpg",
-    circuitImageUrl: "/src/assets/images/robotics_circuit_concept_1792122590736.jpg",
+    avatarUrl: "",
+    labImageUrl: labImageUrl,
+    circuitImageUrl: circuitImageUrl,
   },
 
   metrics: [

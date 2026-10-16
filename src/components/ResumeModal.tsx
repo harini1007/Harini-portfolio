@@ -11,7 +11,6 @@ import {
   Cpu, 
   CheckCircle2, 
   ExternalLink,
-  Eye,
   FileText
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
@@ -22,8 +21,6 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
-  const [viewOriginalImage, setViewOriginalImage] = useState(false);
-
   // Close on ESC
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -89,14 +86,6 @@ END:VCARD`;
 
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setViewOriginalImage(!viewOriginalImage)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors"
-            >
-              <Eye className="w-3.5 h-3.5 text-blue-400" />
-              <span>{viewOriginalImage ? 'View Digital Format' : 'View Original Sheet'}</span>
-            </button>
-
-            <button
               onClick={handleDownloadVCard}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors"
               title="Save Contact to Phone"
@@ -124,24 +113,9 @@ END:VCARD`;
           </div>
         </div>
 
-        {/* Modal Scrollable Content */}
+        {/* Modal Scrollable Content: Pristine Digital Formatted CV Sheet */}
         <div className="overflow-y-auto p-6 sm:p-10 bg-[#090e1a]">
-          
-          {viewOriginalImage ? (
-            <div className="flex flex-col items-center justify-center space-y-4">
-              <div className="text-xs text-slate-400 font-mono">
-                Original Uploaded CV Document (Reference Scan)
-              </div>
-              <img
-                src="/Harini CV.png"
-                alt="Harini M Original CV Document"
-                className="max-w-full rounded-xl shadow-2xl border border-slate-700 object-contain"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          ) : (
-            /* Digital Formatted CV Sheet */
-            <div className="bg-[#0c1222] text-slate-200 border border-slate-800 rounded-xl p-8 sm:p-12 shadow-inner space-y-8 font-sans">
+          <div className="bg-[#0c1222] text-slate-200 border border-slate-800 rounded-xl p-8 sm:p-12 shadow-inner space-y-8 font-sans">
               
               {/* Header */}
               <div className="text-center pb-6 border-b border-slate-800">
@@ -276,8 +250,6 @@ END:VCARD`;
               </div>
 
             </div>
-          )}
-
         </div>
 
       </div>
