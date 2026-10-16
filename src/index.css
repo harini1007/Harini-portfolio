@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #060913;
+    color: #e2e8f0;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Subtle circuit background grid */
+.circuit-grid {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.circuit-grid-orange {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(249, 115, 22, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Subtle glowing accent glows */
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.25);
+}
+
+.glow-orange {
+  box-shadow: 0 0 40px -10px rgba(249, 115, 22, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060913;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Print styles for resume */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
